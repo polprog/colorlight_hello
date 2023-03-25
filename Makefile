@@ -17,7 +17,7 @@ all: ${PROJ}.bit
 ${PROJ}.svf : ${PROJ}.bit
 
 prog: ${PROJ}.svf
-	openocd -f ${TRELLIS}/misc/openocd/ecp5-evn.cfg -c "transport select jtag; init; svf $<; exit"
+	openocd -f colorlight_5a75b.cfg -c "svf -quiet -progress $<; exit"
 
 clean:
 	rm -f *.svf *.bit *.config *.json
